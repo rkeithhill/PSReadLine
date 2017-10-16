@@ -832,6 +832,7 @@ namespace Microsoft.PowerShell
         private static string GetPrompt()
         {
             string newPrompt = null;
+#if PowerShellV5
             if (_singleton._runspace?.Debugger != null && _singleton._runspace.Debugger.InBreakpoint)
             {
                 // Run prompt command in debugger API to ensure it is run correctly on the runspace.
@@ -847,6 +848,7 @@ namespace Microsoft.PowerShell
                     newPrompt = results[0].BaseObject as string;
             }
             else
+#endif
             {
                 var runspaceIsRemote = _singleton._mockableMethods.RunspaceIsRemote(_singleton._runspace);
 

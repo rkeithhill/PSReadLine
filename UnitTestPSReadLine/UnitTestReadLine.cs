@@ -478,6 +478,7 @@ namespace UnitTestPSReadLine
             Assert.AreEqual(expected, input);
         }
 
+#if WIN32
         private static string GetClipboardText()
         {
             string fromClipboard = null;
@@ -515,6 +516,7 @@ namespace UnitTestPSReadLine
             }
             Assert.AreEqual(text, fromClipboard);
         }
+#endif
 
         private static void ExecuteOnSTAThread(Action action)
         {

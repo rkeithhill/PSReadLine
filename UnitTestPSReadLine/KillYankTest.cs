@@ -299,6 +299,7 @@ namespace UnitTestPSReadLine
             TestMustDing("a", Keys(_.AltPeriod, _.CtrlZ)); 
         }
 
+#if WIN32
         [TestMethod]
         public void TestPaste()
         {
@@ -355,6 +356,7 @@ namespace UnitTestPSReadLine
                     Tuple.Create(ConsoleColor.Red, _console.BackgroundColor), "^C")),
                 InputAcceptedNow));
         }
+#endif
 
         [TestMethod]
         public void TestSelectBackwardChar()

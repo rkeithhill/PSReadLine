@@ -14,6 +14,7 @@ namespace UnitTestPSReadLine
         // Disabled because the test is not portable without some mocking that
         // probably not worth the effort.
         //[TestMethod]
+#if WIN32
         public void TestCaptureScreen()
         {
             TestSetup(KeyMode.Cmd,
@@ -71,5 +72,6 @@ namespace UnitTestPSReadLine
             // * Rtf output
             // * Rtf special characters
         }
+#endif
     }
 }
